@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<settings>
+    <mirrors>
+        <mirror>
+            <id>all</id>
+            <url>http://applications.prima-solutions.com/maven/content/groups/maven-all/</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+    <activeProfiles>
+        <activeProfile>repositories</activeProfile>
+        <activeProfile>primaclaims-oracle</activeProfile>
+        <activeProfile>lmi-claims-oracle</activeProfile>
+    </activeProfiles>
+    <profiles>
+        <profile>
+            <id>repositories</id>
+            <repositories>
+                <repository>
+                    <id>main</id>
+                    <name>Central repository</name>
+                    <url>http://applications.prima-solutions.com/maven/content/groups/maven-all/</url>
+                    <releases>
+                        <enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>main</id>
+                    <name>Central repository</name>
+                    <url>http://applications.prima-solutions.com/maven/content/groups/maven-all/</url>
+                    <releases>
+                        <enabled>false</enabled>
+						<updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        
+        
+		 
+		 <profile>
+    <id>lmi-claims-oracle</id>
+        <properties>
+                <lmi.claims.oracle.path>C:\oraclexe\app\oracle\product\11.2.0\server\bin\sqlplus.exe</lmi.claims.oracle.path>
+                <lmi.claims.jdbc.port>1521</lmi.claims.jdbc.port>
+                <lmi.claims.jdbc.database>XE</lmi.claims.jdbc.database>
+                <lmi.claims.jdbc.driver>oracle.jdbc.driver.OracleDriver</lmi.claims.jdbc.driver>
+                <lmi.claims.jdbc.host>localhost</lmi.claims.jdbc.host>
+                <lmi.claims.jdbc.username>claims</lmi.claims.jdbc.username>
+                <lmi.claims.jdbc.password>claims</lmi.claims.jdbc.password>
+                <primaclaims-trunk.basedir>D:\dev\sources\buffer-lmi-dev</primaclaims-trunk.basedir>
+        </properties>
+</profile>
+
+<profile>
+    <id>primaclaims-oracle</id>
+    <properties>
+        <primaclaims.oracle.path>sqlplus</primaclaims.oracle.path>
+        <primaclaims.jdbc.port>1521</primaclaims.jdbc.port>
+        <primaclaims.jdbc.database>XE</primaclaims.jdbc.database>
+        <primaclaims.jdbc.driver>oracle.jdbc.driver.OracleDriver</primaclaims.jdbc.driver>               
+        <primaclaims.jdbc.host>localhost</primaclaims.jdbc.host>
+        <primaclaims.jdbc.username>claims</primaclaims.jdbc.username>
+        <primaclaims.jdbc.password>claims</primaclaims.jdbc.password>
+        <primaclaims.hibernate.dialect>org.hibernate.dialect.Oracle10gDialect</primaclaims.hibernate.dialect>
+    </properties>
+</profile>
+    </profiles>
+</settings>
